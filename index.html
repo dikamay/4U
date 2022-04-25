@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>For You</title>
+	<link rel="stylesheet" type="text/css" href="tes.css">
+	<!-- <script src="https://cdn.jsdelivr.net/npm/sweetalert2@7.12.15/dist/sweetalert2.all.min.js"></script> -->
+	<link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/sweetalert2@7.12.15/dist/sweetalert2.min.css'>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+
+	<style>
+    .alert {
+    position: relative;
+    padding: 1rem 1rem;
+    margin-bottom: 1rem;
+    border: 1px solid transparent;
+    border-radius: .25rem;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+  font-family: 'Lato';
+  font-size: 25px;
+  }
+  .alert-primary {
+      color: #084298;
+      background-color: #cfe2ff;
+      border-color: #b6d4fe;
+  }
+    button{
+      width: 130px;
+      margin: 10px 10px;
+      background: cornflowerblue;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 8px;
+  font-family: 'Lato';
+  /*margin: 5px;*/
+  text-transform: uppercase;
+  cursor: pointer;
+  outline: none;
+  font-size: 25px;
+    }
+    .sl button{
+      width: 330px;
+      margin: 0 80px;
+    }
+    @media (max-width: 700px){
+    .row{
+        margin-right: 100%;
+    }
+    .sl{
+      width: 300px;
+      text-align: justify;
+      margin: 0 200px;
+    }
+    .sl button{
+      width: 300px;
+    }
+}
+    * {box-sizing:border-box}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+/* Hide the images by default */
+.mySlides {
+  display: none;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+	</style>
+</head>
+<body>
+	
+
+	<!-- Slideshow container -->
+<div class="slideshow-container" style="width:500px; margin-top:0px">
+
+	<div class="sl" id="sh-btn" style="display:flex; align-items: center; justify-content:center;">
+		<h1><button class="">Selamat Ulang Tahun</button></h1>
+	</div>
+
+  <!-- Full-width images with number and caption text -->
+  <div class="mySlides fade">
+    <div class="numbertext"></div>
+    <img src="https://c.tenor.com/8zs-ixao5wkAAAAM/hbd-happy.gif" style="width:100%">
+    <div class="text">Caption Text</div>
+  </div>
+
+  <div class="mySlides fade">
+    <div class="numbertext"></div>
+    <img src="https://c.tenor.com/hoqpixeb0pMAAAAC/bear-blow-a-kiss.gif" style="width:100%">
+    <div class="text">Caption Two</div>
+  </div>
+
+  <div class="mySlides fade" style="margin-top:-10px">
+    <div class="numbertext"></div>
+    <img src="https://c.tenor.com/8b7jfGD9lb8AAAAC/happy-birthday-birthday-cake.gif" style="width:100%; height: 400px">
+    <div class="text">Caption Three</div>
+  </div>
+
+  <!-- Next and previous buttons -->
+  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+  <a class="next" onclick="plusSlides(1)">&#10095;</a>
+</div>
+<br>
+
+<!-- The dots/circles -->
+<div style="text-align:center">
+  <span class="dot" onclick="currentSlide(1)"></span>
+  <span class="dot" onclick="currentSlide(2)"></span>
+  <span class="dot" onclick="currentSlide(3)"></span>
+</div>
+
+  <div class="alert alert-primary" role="alert">
+    Kamu mau sesuatu?&#128578;
+  </div>
+
+  <div class="row" style="margin-left: 40%;">
+    <button class="first">Mau</button>
+    <button id="btn_gamau" onclick="gamau(this)" style="position: absolute;">Gamau!</button>
+
+  </div>
+
+<script type="text/javascript">
+
+  let slideIndex = 0;
+showSlides();
+
+
+	function showSlides() {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("dot");
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) {slideIndex = 1}    
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+  setTimeout(showSlides, 2000); // Change image every 2 seconds
+}
+
+document.querySelector(".first").addEventListener('click', function(){
+   swal({
+    title: "Bentar yaa..",
+    // text: "Kamu mau Hadiah?",
+    imageUrl: "https://c.tenor.com/vEWTKdXfIqsAAAAS/oh-yeah-mochi.gif",
+    imageWidth: 550,
+    imageHeight: 225,
+    imageAlt: "Eagle Image",
+    confirmButtonText: "Ok!",
+    confirmButtonColor: "#00ff55",
+    cancelButtonColor: "#999999",
+    reverseButtons: true,
+  }),setTimeout(function(){ 
+
+   window.location.href = "https://wa.me/+6283180817949?text=Kasih%20tau%20aja...";
+
+}, 3000); //3000 miliseconds alias 3 detik
+
+});
+ 
+document.querySelector(".second").addEventListener('click', function(){
+  swal({
+    title: "Kamu Mau Hadiah?",
+    text: "Kalau iya klik tombol MAU dibawah yaa..",
+    imageUrl: "https://c.tenor.com/hoqpixeb0pMAAAAC/bear-blow-a-kiss.gif",
+    imageWidth: 550,
+    imageHeight: 225,
+  });
+});
+
+  function gamau(id){
+            var mau = document.getElementById("btn_gamau");
+            var i = Math.floor(Math.random() * 300) + 1;
+            var j = Math.floor(Math.random() * 100) + mau.offsetTop;
+
+            id.style.left = i + "px";
+            id.style.top = j + "px";
+        }
+
+
+ 
+
+
+    // $(document).ready(function(){
+    //       $("#btn_gamau").click(function(){
+    //         $(this).hide('slow');
+    //       });
+    //     });
+    //     $(document).ready(function(){
+    //       $("#btn_gamau").mouseleave(function(){
+    //         $(this).show();
+    //       });
+    //     });
+
+</script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@7.12.15/dist/sweetalert2.all.min.js"></script>
+
+</body>
+</html>
